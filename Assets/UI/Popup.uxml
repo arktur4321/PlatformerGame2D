@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="width: 100%; height: 100%; justify-content: center; align-items: center;">
+        <ui:VisualElement style="width: 300px; height: 150px; align-items: center; justify-content: flex-start; border-left-width: 5px; border-right-width: 5px; border-top-width: 5px; border-bottom-width: 5px; border-left-color: rgb(113, 48, 24); border-right-color: rgb(113, 48, 24); border-top-color: rgb(113, 48, 24); border-bottom-color: rgb(113, 48, 24); background-color: rgb(247, 213, 154); -unity-text-align: upper-center;">
+            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" style="justify-content: flex-end; align-items: center; -unity-text-align: upper-center; -unity-font: url(&apos;project://database/Packages/com.unity.mobile.android-logcat/Editor/Fonts/consola.ttf?fileID=12800000&amp;guid=b8af58820f69b474e8f63dc40a702fbc&amp;type=3#consola&apos;); color: rgba(0, 7, 130, 255);" />
+            <ui:Button text="Button" display-tooltip-when-elided="true" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; -unity-font: url(&apos;project://database/Assets/Graphic/ThaleahFat.fontsettings?fileID=12800000&amp;guid=652f7165b7c30ab46af6c4aad90a639b&amp;type=2#ThaleahFat&apos;); width: 200px; height: 25px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
