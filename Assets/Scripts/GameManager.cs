@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance != null && instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(this);
         }
@@ -23,19 +23,31 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject questPanel;
     [SerializeField] PlayerHP playerHP;
     [SerializeField] Transform well;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] mainTheme;
     Vector3 wellPosition;
     public bool isPlayerInScene = true;
     public GameObject interactionButtonGO;
+    int clipIndex = 0;
+
 
     void Start()
     {
         endGamePanel.SetActive(false);
         wellPosition = well.position;
+        audioSource.clip = mainTheme[clipIndex];
+        audioSource.Play();
     }
 
 
     void Update()
     {
+        if (!audioSource.isPlaying)
+        {
+            clipIndex++;
+            audioSource.clip = mainTheme[clipIndex];
+            audioSource.Play();
+        }
         if (playerHP.IsAlive == false && !endGamePanel.activeSelf)
         {
             endGamePanel.SetActive(true);
@@ -68,7 +80,12 @@ public class GameManager : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        
+
+    }
+
+    public void MuteAudio(bool isMuted)
+    {
+        audioSource.mute = isMuted;
     }
 
     private void SavePlayerProgress()

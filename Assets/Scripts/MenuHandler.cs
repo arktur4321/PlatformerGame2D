@@ -6,9 +6,10 @@ using UnityEngine.UIElements;
 public class MenuHandler : MonoBehaviour
 {
     [SerializeField] UIDocument uIDocument;
+    bool isGamePaused = false;
     Button pauseButton;
     Toggle muteToggle;
-
+    public bool IsGamePaused { get { return isGamePaused; } }
 
     void Start()
     {
@@ -24,6 +25,15 @@ public class MenuHandler : MonoBehaviour
     private void pauseButton_Clicked()
     {
         Debug.Log("Pause clicked.");
+        isGamePaused = !isGamePaused;
+        if (isGamePaused)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
     }
 
     // Update is called once per frame

@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody2D stickManRig;
     [SerializeField] Animator animator;
     [SerializeField] LayerMask enemyLayers;
+    [SerializeField] MenuHandler menuHandler;
     public float speed = 4;
     public float jumpForce = 2;
     public int damageDealt = 0;
@@ -79,79 +80,77 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(playerJoysticks.Player.Movement.ReadValue<Vector2>());
+        if (!menuHandler.IsGamePaused)
+        {
+            //Movement
+            if (animator.GetBool("alive") == true)
+                horizontalMove = playerJoysticks.Player.Movement.ReadValue<Vector2>().x;
+            else
+                horizontalMove = 0.0f;
+            animator.SetFloat("speed", horizontalMove);
+            if (!isOnLeftSide && horizontalMove > 0)
+            {
+                isOnLeftSide = true;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if (isOnLeftSide && horizontalMove < 0)
+            {
+                isOnLeftSide = false;
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
 
-        //Movement
-        if (animator.GetBool("alive") == true)
-            horizontalMove = playerJoysticks.Player.Movement.ReadValue<Vector2>().x;
-        else
-            horizontalMove = 0.0f;
-        animator.SetFloat("speed", horizontalMove);
-        if (!isOnLeftSide && horizontalMove > 0)
-        {
-            isOnLeftSide = true;
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        else if (isOnLeftSide && horizontalMove < 0)
-        {
-            isOnLeftSide = false;
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
-
-        //Jumping
-        if (Input.GetKeyDown(KeyCode.Space) && isJumping == false && animator.GetBool("alive") == true)
-        {
-            isGrounded = false;
-            isJumping = true;
-        }
-
-        //Attacking
-        if (Input.GetMouseButtonDown(0))
-        {
-            //animator.SetTrigger("attack");
-        }
-
-        //Blocking
-        if (Input.GetMouseButtonDown(1))
-        {
-            animator.SetBool("block", true);
-            isBlocking = true;
-        }
-        else if (Input.GetMouseButtonUp(1))
-        {
-            animator.SetBool("block", false);
-            isBlocking = false;
-        }
+            //Jumping
+            if (Input.GetKeyDown(KeyCode.Space) && isJumping == false && animator.GetBool("alive") == true)
+            {
+                isGrounded = false;
+                isJumping = true;
+            }
 
 
-        if(GameManager.instance.isPlayerInScene == false && SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            GameManager.instance.PlayerIsBack(transform);
-            GameManager.instance.isPlayerInScene = true;
+            //Blocking
+            if (Input.GetMouseButtonDown(1))
+            {
+                animator.SetBool("block", true);
+                isBlocking = true;
+            }
+            else if (Input.GetMouseButtonUp(1))
+            {
+                animator.SetBool("block", false);
+                isBlocking = false;
+            }
+
+
+            if (GameManager.instance.isPlayerInScene == false && SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                GameManager.instance.PlayerIsBack(transform);
+                GameManager.instance.isPlayerInScene = true;
+            }
+
+
+            if (isPotionActive)
+            {
+                potionTime -= Time.deltaTime;
+            }
+            if (isBigPotionActive)
+            {
+                bigPotionTime -= Time.deltaTime;
+            }
+
+            if (potionTime <= 0)
+            {
+                isPotionActive = false;
+                speed = 4;
+                potionTime = 3;
+            }
+            if (bigPotionTime <= 0)
+            {
+                isBigPotionActive = false;
+                speed = 4;
+                bigPotionTime = 6;
+            }
         }
 
 
-        if (isPotionActive)
-        {
-            potionTime -= Time.deltaTime;
-        }
-        if (isBigPotionActive)
-        {
-            bigPotionTime -= Time.deltaTime;
-        }
-
-        if(potionTime <= 0)
-        {
-            isPotionActive = false;
-            speed = 4;
-            potionTime = 3;
-        }
-        if (bigPotionTime <= 0)
-        {
-            isBigPotionActive = false;
-            speed = 4;
-            bigPotionTime = 6;
-        }
     }
 
     private void FixedUpdate()
@@ -207,7 +206,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-public void HitEnemy()
+    public void HitEnemy()
     {
         if (enemyInColl != null)
         {
