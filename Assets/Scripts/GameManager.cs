@@ -65,4 +65,14 @@ public class GameManager : MonoBehaviour
     {
         playerPos.position = wellPosition;
     }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        
+    }
+
+    private void SavePlayerProgress()
+    {
+        //PlayerPrefs.SetInt("points", points);
+    }
 }

@@ -15,11 +15,15 @@ public class PlayerMovement : MonoBehaviour
     public int damageDealt = 0;
     public bool IsBlocking { get { return isBlocking; } }
     private PlayerJoysticks playerJoysticks;
+    float potionTime = 20;
+    float bigPotionTime = 40;
     float horizontalMove;
     bool isGrounded = true;
     bool isJumping = false;
     bool isOnLeftSide = true;
     bool isBlocking = false;
+    bool isPotionActive = false;
+    bool isBigPotionActive = false;
     Collider2D enemyInColl;
 
 
@@ -125,6 +129,29 @@ public class PlayerMovement : MonoBehaviour
             GameManager.instance.PlayerIsBack(transform);
             GameManager.instance.isPlayerInScene = true;
         }
+
+
+        if (isPotionActive)
+        {
+            potionTime -= Time.deltaTime;
+        }
+        if (isBigPotionActive)
+        {
+            bigPotionTime -= Time.deltaTime;
+        }
+
+        if(potionTime <= 0)
+        {
+            isPotionActive = false;
+            speed = 4;
+            potionTime = 3;
+        }
+        if (bigPotionTime <= 0)
+        {
+            isBigPotionActive = false;
+            speed = 4;
+            bigPotionTime = 6;
+        }
     }
 
     private void FixedUpdate()
@@ -155,6 +182,19 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
             isJumping = false;
         }
+
+        if (collision.gameObject.layer == 10)
+        {
+            speed = speed * 2;
+            isPotionActive = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.layer == 11)
+        {
+            speed = speed * 2;
+            isBigPotionActive = true;
+            Destroy(collision.gameObject);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -166,7 +206,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void HitEnemy()
+
+public void HitEnemy()
     {
         if (enemyInColl != null)
         {
