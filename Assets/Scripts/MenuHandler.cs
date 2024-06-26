@@ -19,7 +19,19 @@ public class MenuHandler : MonoBehaviour
         muteToggle = rootElement.Q<Toggle>("mute-toggle");
 
         pauseButton.clickable.clicked += pauseButton_Clicked;
-        //Funkce do mute jak zrobi siê zwiêki w grze
+        muteToggle.RegisterValueChangedCallback(MuteToogle_Changed);
+    }
+
+    private void MuteToogle_Changed(ChangeEvent<bool> evt)
+    {
+        if (evt.newValue)
+        {
+            AudioListener.pause = true;
+        }
+        else
+        {
+            AudioListener.pause = false;
+        }
     }
 
     private void pauseButton_Clicked()
@@ -39,6 +51,6 @@ public class MenuHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

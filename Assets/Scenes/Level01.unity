@@ -1841,6 +1841,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4959970586597024578, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 86d38be4937d1c344b9c7f22912685eb, type: 3}
@@ -2356,6 +2361,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2183321564951531329, guid: 2f54e7022d76f09478e2e1124e212cc5,
     type: 3}
   m_PrefabInstance: {fileID: 274373456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &276937847 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 518374634}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &278670466
 PrefabInstance:
@@ -15990,6 +16001,7 @@ Transform:
   - {fileID: 1464140156}
   - {fileID: 1751708949}
   - {fileID: 775609744}
+  - {fileID: 1362593376}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16180,6 +16192,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Village Props - Log Bench
       objectReference: {fileID: 0}
+    - target: {fileID: 8764381751610422877, guid: 28ae4e85426a2f54a98737a016d4cbc2,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -12
+      objectReference: {fileID: 0}
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
       propertyPath: m_RootOrder
@@ -16188,12 +16205,12 @@ PrefabInstance:
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.2674103
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5536705
+      value: 4.01
       objectReference: {fileID: 0}
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
@@ -16257,6 +16274,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Village Props - Log Bench (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8764381751610422877, guid: 28ae4e85426a2f54a98737a016d4cbc2,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -9
+      objectReference: {fileID: 0}
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
       propertyPath: m_RootOrder
@@ -16265,12 +16287,12 @@ PrefabInstance:
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.311002
+      value: 0.006411314
       objectReference: {fileID: 0}
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.12799996
+      value: 2.3283296
       objectReference: {fileID: 0}
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
@@ -16874,6 +16896,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4959970586597024578, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 86d38be4937d1c344b9c7f22912685eb, type: 3}
@@ -16883,6 +16910,82 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 513475061}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &518374634
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 1362593376}
+    m_Modifications:
+    - target: {fileID: 982056747370159609, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_Name
+      value: PF Village Props - Wood Log 01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159614, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07019409
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86d38be4937d1c344b9c7f22912685eb, type: 3}
 --- !u!1 &522833850
 GameObject:
   m_ObjectHideFlags: 0
@@ -17879,6 +17982,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Village Props - Log Bench (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8764381751610422877, guid: 28ae4e85426a2f54a98737a016d4cbc2,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -8
+      objectReference: {fileID: 0}
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
       propertyPath: m_RootOrder
@@ -17887,12 +17995,12 @@ PrefabInstance:
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.311002
+      value: 0.006411314
       objectReference: {fileID: 0}
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.699
+      value: 1.7573295
       objectReference: {fileID: 0}
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
@@ -18216,6 +18324,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Village Props - Log Bench (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8764381751610422877, guid: 28ae4e85426a2f54a98737a016d4cbc2,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
       propertyPath: m_RootOrder
@@ -18224,12 +18337,12 @@ PrefabInstance:
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.304002
+      value: 0.0134112835
       objectReference: {fileID: 0}
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.44200006
+      value: 2.8983297
       objectReference: {fileID: 0}
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
@@ -21182,6 +21295,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Village Props - Log Bench (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8764381751610422877, guid: 28ae4e85426a2f54a98737a016d4cbc2,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -11
+      objectReference: {fileID: 0}
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
       propertyPath: m_RootOrder
@@ -21190,12 +21308,12 @@ PrefabInstance:
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.245
+      value: 0.07240875
       objectReference: {fileID: 0}
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.983
+      value: 3.4393296
       objectReference: {fileID: 0}
     - target: {fileID: 8764381751610422878, guid: 28ae4e85426a2f54a98737a016d4cbc2,
         type: 3}
@@ -23057,6 +23175,87 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1216811177}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1231594422
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 1362593376}
+    m_Modifications:
+    - target: {fileID: 982056747370159609, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_Name
+      value: PF Village Props - Wood Log 01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159614, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07019409
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959970586597024578, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86d38be4937d1c344b9c7f22912685eb, type: 3}
 --- !u!1001 &1242473353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23129,6 +23328,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959970586597024578, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -23802,8 +24006,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362593375}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 70.01354, y: 1.1133294, z: 0.07019409}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 72.15, y: -3.21, z: 0.07019409}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23824,8 +24028,11 @@ Transform:
   - {fileID: 1542915979}
   - {fileID: 1740106893}
   - {fileID: 1029668130}
-  m_Father: {fileID: 0}
-  m_RootOrder: 32
+  - {fileID: 1713467296}
+  - {fileID: 2058595874}
+  - {fileID: 276937847}
+  m_Father: {fileID: 382576300}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1365662070
 GameObject:
@@ -26801,6 +27008,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4959970586597024578, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 86d38be4937d1c344b9c7f22912685eb, type: 3}
@@ -27797,6 +28009,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1710756067}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1713467296 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1231594422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1733982693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28610,6 +28828,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959970586597024578, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -30124,6 +30347,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2043194344}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2058595874 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 2088852818}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2065401716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30671,6 +30900,87 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2084439601}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2088852818
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 1362593376}
+    m_Modifications:
+    - target: {fileID: 982056747370159609, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_Name
+      value: PF Village Props - Wood Log 01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159614, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07019409
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959970586597024578, guid: 86d38be4937d1c344b9c7f22912685eb,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86d38be4937d1c344b9c7f22912685eb, type: 3}
 --- !u!1001 &2094160180
 PrefabInstance:
   m_ObjectHideFlags: 0
