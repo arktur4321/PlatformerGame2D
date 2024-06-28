@@ -2,6 +2,6 @@
     <Style src="project://database/Assets/USS/style.uss?fileID=7433441132597879392&amp;guid=f73d1c11cd8dbb14e91509f8a60efe00&amp;type=3#style" />
     <ui:VisualElement name="Mini_Setting" style="left: auto; flex-direction: row; justify-content: flex-start; align-items: center;">
         <ui:Button text="||" display-tooltip-when-elided="true" name="pause-button" style="height: 50px; -unity-text-align: middle-center; width: 57px; -unity-font: url(&apos;project://database/Assets/Graphic/Material/font/ThaleahFat_TTF.ttf?fileID=12800000&amp;guid=585188cdc4600544eb408bee749e4b3a&amp;type=3#ThaleahFat_TTF&apos;); font-size: 27px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 1px; border-right-width: 2px; border-bottom-width: 2px; background-image: none; -unity-background-scale-mode: scale-to-fit; -unity-font-style: bold;" />
-        <ui:Toggle name="mute-toogle" style="width: 57px; height: 50px; border-left-width: 1px; border-right-width: 2px; border-bottom-width: 2px; background-image: none; border-top-width: 1px; -unity-background-image-tint-color: rgb(255, 255, 255);" />
+        <ui:Toggle name="mute-toggle" style="width: 57px; height: 50px; border-left-width: 1px; border-right-width: 2px; border-bottom-width: 2px; background-image: none; border-top-width: 1px; -unity-background-image-tint-color: rgb(255, 255, 255);" />
     </ui:VisualElement>
 </ui:UXML>

@@ -24,6 +24,7 @@ public class MenuHandler : MonoBehaviour
 
     private void MuteToogle_Changed(ChangeEvent<bool> evt)
     {
+        Debug.Log("mute");
         if (evt.newValue)
         {
             AudioListener.pause = true;

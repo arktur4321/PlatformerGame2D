@@ -45,6 +45,10 @@ public class GameManager : MonoBehaviour
         if (!audioSource.isPlaying)
         {
             clipIndex++;
+            if(clipIndex >= mainTheme.Length)
+            {
+                clipIndex = 0;
+            }
             audioSource.clip = mainTheme[clipIndex];
             audioSource.Play();
         }
