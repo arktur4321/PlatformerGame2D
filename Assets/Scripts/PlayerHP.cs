@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerHP : MonoBehaviour, IDmg
 {
     [SerializeField] int maxHP, currentHP;
+    [SerializeField] int playerLifes = 3;
     [SerializeField] Text hpText;
     [SerializeField] Image hpSlider;
     [SerializeField] Animator animator;
@@ -41,7 +42,7 @@ public class PlayerHP : MonoBehaviour, IDmg
             animator.SetBool("alive", false);
         }
 
-        if(coll.gameObject.layer == 8)
+        if (coll.gameObject.layer == 8)
         {
             Healing(25);
         }
@@ -52,15 +53,23 @@ public class PlayerHP : MonoBehaviour, IDmg
     }
     public void ReciveDmg(int dmgValue)
     {
-        if(playerMovement.IsBlocking == false)
+        if (playerMovement.IsBlocking == false)
         {
-        currentHP -= dmgValue;
+            currentHP -= dmgValue;
         }
         if (currentHP <= 0)
         {
-            isAlive = false;
-            currentHP = 0;
-            IsDead();
+            if (playerLifes == 0)
+            {
+                isAlive = false;
+                currentHP = 0;
+                IsDead();
+            }
+            else
+            {
+                playerLifes --;
+                currentHP = maxHP;
+            }
         }
         hpText.text = currentHP + "/" + maxHP;
         hpSlider.fillAmount = (float)currentHP / (float)maxHP;

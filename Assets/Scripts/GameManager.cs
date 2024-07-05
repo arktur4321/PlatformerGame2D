@@ -28,7 +28,10 @@ public class GameManager : MonoBehaviour
     Vector3 wellPosition;
     public bool isPlayerInScene = true;
     public GameObject interactionButtonGO;
+    public Transform restartPoint;
     int clipIndex = 0;
+    float saveTimer = 60f;
+    float currentSaveTimer = 60f;
 
 
     void Start()
@@ -37,6 +40,7 @@ public class GameManager : MonoBehaviour
         wellPosition = well.position;
         audioSource.clip = mainTheme[clipIndex];
         audioSource.Play();
+        currentSaveTimer = saveTimer;
     }
 
 
@@ -60,6 +64,14 @@ public class GameManager : MonoBehaviour
         {
             isPlayerInScene = false;
         }
+
+        currentSaveTimer -= Time.deltaTime;
+        if(currentSaveTimer <= 0f)
+        {
+            SavePlayerProgress();
+            currentSaveTimer = saveTimer;
+        }
+
     }
 
     public void RestartGame()
@@ -92,8 +104,20 @@ public class GameManager : MonoBehaviour
         audioSource.mute = isMuted;
     }
 
-    private void SavePlayerProgress()
+    public void SavePlayerProgress()
     {
         //PlayerPrefs.SetInt("points", points);
+        PlayerPrefs.SetFloat("restartPointX", playerHP.transform.position.x);
+        PlayerPrefs.SetFloat("restartPointY", playerHP.transform.position.y);
+        PlayerPrefs.SetString("restartScene", SceneManager.GetActiveScene().name);
+        PlayerPrefs.Save();
+        Debug.Log($"Game saved, position: {PlayerPrefs.GetFloat("restartPointX")}, {PlayerPrefs.GetFloat("restartPointY")}");
+        Debug.Log($"Game saved, scene: {PlayerPrefs.GetString("restartScene")}");
+    }
+
+    public void LoadPleyerProgress()
+    {
+        Debug.Log($"position: {PlayerPrefs.GetFloat("restartPointX")}, {PlayerPrefs.GetFloat("restartPointY")}");
+        Debug.Log($"scene: {PlayerPrefs.GetString("restartScene")}");
     }
 }
