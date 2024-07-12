@@ -89,6 +89,10 @@ public class GameManager : MonoBehaviour
     {
         questPanel.SetActive(true);
     }
+    public void QuitQuestPanel()
+    {
+        questPanel.SetActive(false);
+    }
 
     public void PlayerIsBack(Transform playerPos)
     {
@@ -129,5 +133,6 @@ public class GameManager : MonoBehaviour
         PlayerHP HpPlayer = GameObject.Find("Player").GetComponent<PlayerHP>();
         HpPlayer.currentHP = PlayerPrefs.GetInt("playeHP");
         HpPlayer.LoadHPBar();
+        
     }
 }

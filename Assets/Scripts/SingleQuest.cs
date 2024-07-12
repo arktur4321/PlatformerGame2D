@@ -9,6 +9,7 @@ public class SingleQuest : MonoBehaviour
     [SerializeField] private Toggle isComplete;
     [SerializeField] private TMP_Text titleText;
     [SerializeField] private TMP_Text descriptionText;
+    string questName;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,19 @@ public class SingleQuest : MonoBehaviour
     public void SetTitle(string title)
     {
         titleText.text = title;
+        questName = title;
+        if (PlayerPrefs.HasKey(questName))
+        {
+            if (PlayerPrefs.GetInt(questName) == 1 )
+            {
+                isComplete.isOn = true;
+            }
+            
+        }
+        else
+        {
+            isComplete.isOn = false;
+        }
     }
 
     public void SetDescription(string description)
@@ -35,5 +49,6 @@ public class SingleQuest : MonoBehaviour
     public void SetQuestCompleted()
     {
         isComplete.isOn = true;
+        PlayerPrefs.SetInt(questName, 1);
     }
 }

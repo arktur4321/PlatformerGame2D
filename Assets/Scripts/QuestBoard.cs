@@ -94,7 +94,7 @@ public class QuestBoard : MonoBehaviour
         SingleQuest singleQuest = contentGO.transform.GetChild(qIndex).GetComponent<SingleQuest>();
         if (dmgCount >= 500)
         {
-            singleQuest.SetQuestCompleted();
+            singleQuest.SetQuestCompleted() ;
         }
     }
       
