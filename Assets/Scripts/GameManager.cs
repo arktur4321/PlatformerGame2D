@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
         audioSource.clip = mainTheme[clipIndex];
         audioSource.Play();
         currentSaveTimer = saveTimer;
+        LoadPleyerProgress();
     }
 
 
@@ -109,15 +110,24 @@ public class GameManager : MonoBehaviour
         //PlayerPrefs.SetInt("points", points);
         PlayerPrefs.SetFloat("restartPointX", playerHP.transform.position.x);
         PlayerPrefs.SetFloat("restartPointY", playerHP.transform.position.y);
+
+        PlayerPrefs.SetInt("playeHP", playerHP.currentHP);
+
         PlayerPrefs.SetString("restartScene", SceneManager.GetActiveScene().name);
+
         PlayerPrefs.Save();
+
         Debug.Log($"Game saved, position: {PlayerPrefs.GetFloat("restartPointX")}, {PlayerPrefs.GetFloat("restartPointY")}");
         Debug.Log($"Game saved, scene: {PlayerPrefs.GetString("restartScene")}");
     }
 
     public void LoadPleyerProgress()
     {
-        Debug.Log($"position: {PlayerPrefs.GetFloat("restartPointX")}, {PlayerPrefs.GetFloat("restartPointY")}");
+        GameObject.Find("Player").transform.position = new Vector3(PlayerPrefs.GetFloat("restartPointX"), PlayerPrefs.GetFloat("restarPointY"), 0f);
+
         Debug.Log($"scene: {PlayerPrefs.GetString("restartScene")}");
+        PlayerHP HpPlayer = GameObject.Find("Player").GetComponent<PlayerHP>();
+        HpPlayer.currentHP = PlayerPrefs.GetInt("playeHP");
+        HpPlayer.LoadHPBar();
     }
 }

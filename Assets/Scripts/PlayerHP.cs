@@ -5,15 +5,23 @@ using UnityEngine.UI;
 
 public class PlayerHP : MonoBehaviour, IDmg
 {
-    [SerializeField] int maxHP, currentHP;
+    [SerializeField] int maxHP;
+    public int currentHP;
     [SerializeField] int playerLifes = 3;
     [SerializeField] Text hpText;
     [SerializeField] Image hpSlider;
     [SerializeField] Animator animator;
     [SerializeField] PlayerMovement playerMovement;
+    GameObject respawnPoint;
+
 
     private bool isAlive = true;
     public bool IsAlive { get { return isAlive; } }
+
+    private void Awake()
+    {
+        respawnPoint = GameObject.FindWithTag("Respawn");
+    }
 
     void Start()
     {
@@ -24,7 +32,10 @@ public class PlayerHP : MonoBehaviour, IDmg
 
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            transform.position = respawnPoint.transform.position;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D coll)
@@ -51,6 +62,12 @@ public class PlayerHP : MonoBehaviour, IDmg
             Healing(50);
         }
     }
+
+    public void LoadHPBar()
+    {
+        hpText.text = currentHP + "/" + maxHP;
+        hpSlider.fillAmount = (float)currentHP / (float)maxHP;
+    }
     public void ReciveDmg(int dmgValue)
     {
         if (playerMovement.IsBlocking == false)
@@ -67,7 +84,8 @@ public class PlayerHP : MonoBehaviour, IDmg
             }
             else
             {
-                playerLifes --;
+                transform.position = respawnPoint.transform.position;
+                playerLifes--;
                 currentHP = maxHP;
             }
         }
