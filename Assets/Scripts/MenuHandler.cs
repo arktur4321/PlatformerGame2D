@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 public class MenuHandler : MonoBehaviour
 {
     [SerializeField] UIDocument uIDocument;
+    [SerializeField] GameObject popup;
     bool isGamePaused = false;
     Button pauseButton;
     Toggle muteToggle;
@@ -47,6 +48,7 @@ public class MenuHandler : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+        popup.SetActive(true);
     }
 
     // Update is called once per frame

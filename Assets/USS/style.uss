@@ -3,3 +3,52 @@
     height: 50px;
     background-image: none;
 }
+
+.unity-base-slider__drag-container {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+}
+
+.unity-slider__label {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    -unity-font-style: normal;
+}
+
+.unity-base-slider__input {
+    visibility: visible;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.unity-base-slider__tracker {
+    height: 10px;
+    margin-top: 0;
+}
+
+#MySlider Label {
+    -unity-background-image-tint-color: rgba(255, 255, 255, 255);
+    display: flex;
+}
+
+#MySlider #unity-drag-container {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    height: 20px;
+    background-color: rgb(255, 0, 0);
+    top: 0;
+}
+
+#MySlider #unity-tracker {
+    background-color: rgb(255, 255, 255);
+    height: 0;
+    top: 0;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    flex-grow: 1;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    align-items: center;
+}

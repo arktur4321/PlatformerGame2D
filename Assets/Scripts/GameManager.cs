@@ -130,6 +130,7 @@ public class GameManager : MonoBehaviour
         GameObject.Find("Player").transform.position = new Vector3(PlayerPrefs.GetFloat("restartPointX"), PlayerPrefs.GetFloat("restarPointY"), 0f);
 
         Debug.Log($"scene: {PlayerPrefs.GetString("restartScene")}");
+
         PlayerHP HpPlayer = GameObject.Find("Player").GetComponent<PlayerHP>();
         HpPlayer.currentHP = PlayerPrefs.GetInt("playeHP");
         HpPlayer.LoadHPBar();
