@@ -18,7 +18,7 @@ public class QuestBoard : MonoBehaviour
     public static event Action OnDamageDealt;
     public QuestList[] questList;
 
-    void Start()
+    void Awake()
     {
         for (int i = 1; i < questList.Length; i++)
         {

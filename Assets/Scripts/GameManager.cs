@@ -127,9 +127,14 @@ public class GameManager : MonoBehaviour
 
     public void LoadPleyerProgress()
     {
-        GameObject.Find("Player").transform.position = new Vector3(PlayerPrefs.GetFloat("restartPointX"), PlayerPrefs.GetFloat("restarPointY"), 0f);
+        Debug.Log($"Game load, position: {PlayerPrefs.GetFloat("restartPointX")}, {PlayerPrefs.GetFloat("restartPointY")}");
+        GameObject.Find("Player").transform.position = new Vector3(PlayerPrefs.GetFloat("restartPointX"), PlayerPrefs.GetFloat("restartPointY"), 0f);
 
         Debug.Log($"scene: {PlayerPrefs.GetString("restartScene")}");
+        if(PlayerPrefs.GetString("restartScene") != SceneManager.GetActiveScene().name)
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetString("restartScene"));
+        }
 
         PlayerHP HpPlayer = GameObject.Find("Player").GetComponent<PlayerHP>();
         HpPlayer.currentHP = PlayerPrefs.GetInt("playeHP");

@@ -9,12 +9,21 @@ public class Popup : MonoBehaviour
     [SerializeField] UIDocument uIDocument;
     [SerializeField] PlayerHP playerHP;
     [SerializeField]GameObject spawnPoint;
-    Button StettingButton;
+    Button settingButton;
     Button resetButton;
     Button closeButton;
     void Start()
     {
-        
+        VisualElement rootElement = uIDocument.rootVisualElement;
+
+        resetButton = rootElement.Q<Button>("Reset-Button");
+        settingButton = rootElement.Q<Button>("Settings-Button");
+        closeButton = rootElement.Q<Button>("Close-Button");
+
+        resetButton.clickable.clicked += ResetButton;
+        settingButton.clickable.clicked += SettingsButton;
+        closeButton.clickable.clicked += CloseButton;
+
     }
 
 
