@@ -10,7 +10,7 @@ public class MenuHandler : MonoBehaviour
     bool isGamePaused = false;
     Button pauseButton;
     Toggle muteToggle;
-    public bool IsGamePaused { get { return isGamePaused; } }
+    public static bool IsGamePaused = false;
 
     void Start()
     {
@@ -22,6 +22,7 @@ public class MenuHandler : MonoBehaviour
         pauseButton.clickable.clicked += pauseButton_Clicked;
         muteToggle.RegisterValueChangedCallback(MuteToogle_Changed);
     }
+
 
     private void MuteToogle_Changed(ChangeEvent<bool> evt)
     {
@@ -39,8 +40,8 @@ public class MenuHandler : MonoBehaviour
     private void pauseButton_Clicked()
     {
         Debug.Log("Pause clicked.");
-        isGamePaused = !isGamePaused;
-        if (isGamePaused)
+        IsGamePaused = !IsGamePaused;
+        if (IsGamePaused)
         {
             Time.timeScale = 0f;
         }
@@ -48,7 +49,7 @@ public class MenuHandler : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
-        popup.SetActive(true);
+        popup.SetActive(IsGamePaused);
     }
 
     // Update is called once per frame

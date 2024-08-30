@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (!menuHandler.IsGamePaused)
+        if (!MenuHandler.IsGamePaused)
         {
             //Movement
             if (animator.GetBool("alive") == true)

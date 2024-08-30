@@ -36,11 +36,14 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        MenuHandler.IsGamePaused = false;
+        Time.timeScale = 1.0f;
         endGamePanel.SetActive(false);
         wellPosition = well.position;
         audioSource.clip = mainTheme[clipIndex];
         audioSource.Play();
         currentSaveTimer = saveTimer;
+        //PlayerPrefs.DeleteKey("playeHP");
         LoadPleyerProgress();
     }
 
@@ -50,7 +53,7 @@ public class GameManager : MonoBehaviour
         if (!audioSource.isPlaying)
         {
             clipIndex++;
-            if(clipIndex >= mainTheme.Length)
+            if (clipIndex >= mainTheme.Length)
             {
                 clipIndex = 0;
             }
@@ -67,7 +70,7 @@ public class GameManager : MonoBehaviour
         }
 
         currentSaveTimer -= Time.deltaTime;
-        if(currentSaveTimer <= 0f)
+        if (currentSaveTimer <= 0f)
         {
             SavePlayerProgress();
             currentSaveTimer = saveTimer;
@@ -131,14 +134,21 @@ public class GameManager : MonoBehaviour
         GameObject.Find("Player").transform.position = new Vector3(PlayerPrefs.GetFloat("restartPointX"), PlayerPrefs.GetFloat("restartPointY"), 0f);
 
         Debug.Log($"scene: {PlayerPrefs.GetString("restartScene")}");
-        if(PlayerPrefs.GetString("restartScene") != SceneManager.GetActiveScene().name)
+        if (PlayerPrefs.GetString("restartScene") != SceneManager.GetActiveScene().name)
         {
             SceneManager.LoadScene(PlayerPrefs.GetString("restartScene"));
         }
 
         PlayerHP HpPlayer = GameObject.Find("Player").GetComponent<PlayerHP>();
-        HpPlayer.currentHP = PlayerPrefs.GetInt("playeHP");
+        if (PlayerPrefs.HasKey("playerHP"))
+        {
+            HpPlayer.currentHP = PlayerPrefs.GetInt("playeHP");
+        }
+        else
+        {
+            HpPlayer.currentHP = 100;
+        }
         HpPlayer.LoadHPBar();
-        
+
     }
 }

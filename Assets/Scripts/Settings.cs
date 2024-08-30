@@ -32,4 +32,11 @@ public class Settings : MonoBehaviour
         myMixer.SetFloat("sounds", Mathf.Log10(volume)*20);
         //myMixer.SetFloat("sounds", volume);
     }
+
+    public void SettingsClose()
+    {
+        Time.timeScale = 1.0f;
+        MenuHandler.IsGamePaused = false;
+        this.gameObject.SetActive(false);
+    }
 }

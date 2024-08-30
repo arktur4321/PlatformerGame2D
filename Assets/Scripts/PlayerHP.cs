@@ -84,6 +84,10 @@ public class PlayerHP : MonoBehaviour, IDmg
             }
             else
             {
+                if(respawnPoint == null)
+                {
+                    respawnPoint = GameObject.FindWithTag("Respawn");
+                }
                 transform.position = respawnPoint.transform.position;
                 playerLifes--;
                 currentHP = maxHP;

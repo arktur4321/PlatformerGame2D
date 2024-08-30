@@ -8,37 +8,52 @@ public class Popup : MonoBehaviour
 {
     [SerializeField] UIDocument uIDocument;
     [SerializeField] PlayerHP playerHP;
-    [SerializeField]GameObject spawnPoint;
+    [SerializeField] GameObject spawnPoint;
+    [SerializeField] GameObject settings;
+    VisualElement visualPanel;
     Button settingButton;
     Button resetButton;
     Button closeButton;
     void Start()
     {
-        VisualElement rootElement = uIDocument.rootVisualElement;
+        CreateVisualElement();
 
-        resetButton = rootElement.Q<Button>("Reset-Button");
-        settingButton = rootElement.Q<Button>("Settings-Button");
-        closeButton = rootElement.Q<Button>("Close-Button");
+    }
+
+    private void CreateVisualElement()
+    {
+        VisualElement rootElement = uIDocument.rootVisualElement;
+        visualPanel = rootElement.Q<VisualElement>("VisualPanel");
+        resetButton = visualPanel.Q<Button>("Reset-Button");
+        settingButton = visualPanel.Q<Button>("Settings-Button");
+        closeButton = visualPanel.Q<Button>("Close-Button");
 
         resetButton.clickable.clicked += ResetButton;
         settingButton.clickable.clicked += SettingsButton;
         closeButton.clickable.clicked += CloseButton;
-
     }
 
+    private void OnEnable()
+    {
+        CreateVisualElement();
+    }
 
     void Update()
     {
-        
+
     }
 
     void CloseButton()
     {
+        Time.timeScale = 1.0f;
+        MenuHandler.IsGamePaused = false;
+        Debug.Log("closeButton");
         this.gameObject.SetActive(false);
     }
 
     void ResetButton()
     {
+        Debug.Log("restartButton");
         PlayerPrefs.SetFloat("restartPointX", spawnPoint.transform.position.x);
         PlayerPrefs.SetFloat("restartPointY", spawnPoint.transform.position.y);
 
@@ -51,7 +66,9 @@ public class Popup : MonoBehaviour
 
     void SettingsButton()
     {
-
+        Debug.Log("settingsButton");
+        settings.SetActive(true);
+        this.gameObject.SetActive(false);
     }
 
 }

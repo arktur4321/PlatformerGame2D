@@ -34,7 +34,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if(InteractionButton == null)
             {
-                InteractionButton = GameObject.FindGameObjectWithTag("InteractionButton");
+                InteractionButton = GameObject.FindGameObjectWithTag("InteractionButton").transform.GetChild(0).gameObject;
             }
             InteractionButton.SetActive(true);
             infoText.text = interactionText;
@@ -48,7 +48,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (InteractionButton == null)
             {
-                InteractionButton = GameObject.FindGameObjectWithTag("InteractionButton");
+                InteractionButton = GameObject.FindGameObjectWithTag("InteractionButton").transform.GetChild(0).gameObject;
             }
             InteractionButton.SetActive(false);
             interactionNumber = -1;
