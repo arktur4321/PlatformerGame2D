@@ -13,6 +13,7 @@ public class PlayerHP : MonoBehaviour, IDmg
     [SerializeField] Animator animator;
     [SerializeField] PlayerMovement playerMovement;
     GameObject respawnPoint;
+    public GameObject RespawnPoint { get { return respawnPoint; } }
 
 
     private bool isAlive = true;
