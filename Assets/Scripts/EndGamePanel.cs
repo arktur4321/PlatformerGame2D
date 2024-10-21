@@ -26,7 +26,7 @@ public class EndGamePanel : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         isGameRestarted = true;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         
 
     }

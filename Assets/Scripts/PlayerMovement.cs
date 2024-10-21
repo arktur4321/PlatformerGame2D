@@ -80,10 +80,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            SceneManager.LoadScene(1);
-        }
 
 
         if (!MenuHandler.IsGamePaused)

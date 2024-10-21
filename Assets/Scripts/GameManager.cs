@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         {
             endGamePanel.SetActive(true);
         }
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             isPlayerInScene = false;
         }
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void ExitGame()

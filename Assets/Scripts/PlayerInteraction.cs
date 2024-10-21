@@ -61,7 +61,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             case 1 :
                 OnPlayerTravel?.Invoke();
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
                 break;
 
             case 2 :
