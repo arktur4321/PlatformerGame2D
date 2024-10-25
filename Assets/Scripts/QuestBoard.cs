@@ -50,6 +50,22 @@ public class QuestBoard : MonoBehaviour
 
     }
 
+    void FindMissingGo()
+    {
+        if(questPanel == null)
+        {
+            questPanel = GameObject.FindGameObjectWithTag("QuestPanel");
+            contentGO = questPanel.transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
+            panelPrefab = contentGO.transform.GetChild(0).gameObject;
+        }
+
+        if (playerStatistics == null)
+        {
+
+            playerStatistics = GameManager.instance.GetPlayerStatistics;
+        }
+
+    }
     // buttons
 
     public void ClosePanel()
@@ -60,6 +76,7 @@ public class QuestBoard : MonoBehaviour
     public void StinkyTime()
     {
         int qIndex = 0;
+        FindMissingGo();
         SingleQuest singleQuest = contentGO.transform.GetChild(qIndex).GetComponent<SingleQuest>();
             singleQuest.SetQuestCompleted();
     }
@@ -67,6 +84,7 @@ public class QuestBoard : MonoBehaviour
     public void FirstKillQuest()
     {
         int qIndex = 1;
+        FindMissingGo();
         SingleQuest singleQuest = contentGO.transform.GetChild(qIndex).GetComponent<SingleQuest>();
         if (playerStatistics.skeletonsKilled >= 1)
         {
@@ -77,6 +95,7 @@ public class QuestBoard : MonoBehaviour
     public void TrueWarriorQuest()
     {
         int qIndex = 2;
+        FindMissingGo();
         SingleQuest singleQuest = contentGO.transform.GetChild(qIndex).GetComponent<SingleQuest>();
         if (playerStatistics.skeletonsKilled >= 5)
         {
@@ -91,6 +110,7 @@ public class QuestBoard : MonoBehaviour
             dmgCount = playerMovement.damageDealt;
         }
         int qIndex = 3;
+        FindMissingGo();
         SingleQuest singleQuest = contentGO.transform.GetChild(qIndex).GetComponent<SingleQuest>();
         if (dmgCount >= 500)
         {

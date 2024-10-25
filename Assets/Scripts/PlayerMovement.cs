@@ -54,8 +54,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void AttackPerformed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        //animator.SetBool("block", false);
-        //isBlocking = false;
+        animator.SetBool("block", false);
+        isBlocking = false;
         animator.SetTrigger("attack");
     }
 

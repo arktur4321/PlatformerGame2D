@@ -29,9 +29,11 @@ public class GameManager : MonoBehaviour
     public bool isPlayerInScene = true;
     public GameObject interactionButtonGO;
     public Transform restartPoint;
+    public PlayerStatistics GetPlayerStatistics { get { return gameObject.GetComponent<PlayerStatistics>(); } }
     int clipIndex = 0;
     float saveTimer = 60f;
     float currentSaveTimer = 60f;
+
 
 
     void Start()
