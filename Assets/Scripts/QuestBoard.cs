@@ -47,16 +47,19 @@ public class QuestBoard : MonoBehaviour
 
     void Update()
     {
-
+        FindMissingGo();
     }
 
     void FindMissingGo()
     {
         if(questPanel == null)
         {
-            questPanel = GameObject.FindGameObjectWithTag("QuestPanel");
-            contentGO = questPanel.transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
-            panelPrefab = contentGO.transform.GetChild(0).gameObject;
+            GameObject questPP = GameObject.FindGameObjectWithTag("QuestPanel");
+            QuestPanelParent questPanelParent = questPP.GetComponent<QuestPanelParent>();
+            questPanel = questPanelParent.QuestPanel;
+            contentGO = questPanelParent.ContentGO;
+            panelPrefab = questPanelParent.PanelPrefab;
+            
         }
 
         if (playerStatistics == null)

@@ -52,6 +52,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if(interactionButtonGO == null)
+        {
+            GameObject buttonParent = GameObject.FindGameObjectWithTag("InteractionButton");
+            interactionButtonGO = buttonParent.transform.GetChild(0).gameObject;
+        }
+
         if (!audioSource.isPlaying)
         {
             clipIndex++;
@@ -102,11 +108,6 @@ public class GameManager : MonoBehaviour
     public void PlayerIsBack(Transform playerPos)
     {
         playerPos.position = wellPosition;
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-
     }
 
     public void MuteAudio(bool isMuted)

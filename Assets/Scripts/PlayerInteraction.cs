@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 using System;
 
 
@@ -18,8 +19,11 @@ public class PlayerInteraction : MonoBehaviour
 
     void Start()
     {
-        InteractionButton.SetActive(false);
         GameManager.instance.interactionButtonGO = InteractionButton;
+        Button interactionBtn = InteractionButton.GetComponent<Button>();
+        interactionBtn.onClick.AddListener(WellEnter);
+        InteractionButton.SetActive(false);
+
     }
 
 
